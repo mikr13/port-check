@@ -7,8 +7,8 @@ const port = process.argv[2];
 
 if (!port) {
   console.error('❌ Error: Please provide a port number.');
-  console.log('\nUsage: npx port-check <port>');
-  console.log('Example: npx port-check 3000');
+  console.log('\nUsage: npx @mikr13/port-check <port>');
+  console.log('Example: npx @mikr13/port-check 3000');
   process.exit(1);
 }
 
