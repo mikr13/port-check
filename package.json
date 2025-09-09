@@ -1,0 +1,36 @@
+{
+  "name": "port-check",
+  "version": "1.0.0",
+  "description": "A cross-platform CLI tool to check which process is running on a specific port",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "port-check": "./index.js"
+  },
+  "scripts": {
+    "start": "bun run index.js",
+    "test": "bun test"
+  },
+  "keywords": [
+    "port",
+    "process",
+    "network",
+    "cli",
+    "cross-platform",
+    "lsof",
+    "netstat"
+  ],
+  "author": "mikr13 <mihirpandey.13@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikr13/port-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikr13/port-check/issues"
+  },
+  "homepage": "https://github.com/mikr13/port-check#readme"
+}
