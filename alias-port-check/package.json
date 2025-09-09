@@ -1,0 +1,23 @@
+{
+  "name": "port-inspect",
+  "version": "1.0.0",
+  "description": "Unscoped alias for @mikr13/port-check",
+  "type": "module",
+  "bin": {
+    "port-inspect": "./bin/port-inspect.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "dependencies": {
+    "@mikr13/port-check": "^1.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikr13/port-check.git"
+  },
+  "license": "MIT"
+}
