@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "port-inspect",
+      "dependencies": {
+        "@mikr13/port-check": "^1.0.1",
+      },
+    },
+  },
+  "packages": {
+    "@mikr13/port-check": ["@mikr13/port-check@1.0.1", "", { "bin": { "port-check": "index.js" } }, "sha512-9rDOusNiv2IpcApry5YJaimWfkipl2ryTL8mVKEIWrQ82d3TggbNTKvkblEp880rd4xuBSEUZZGsTzahJYEPfA=="],
+  }
+}

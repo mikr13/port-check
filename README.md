@@ -15,6 +15,12 @@ A cross-platform CLI tool to check which process is running on a specific port. 
 ### Using npx (Recommended)
 
 ```bash
+npx port-inspect <port>
+```
+
+Alternatively:
+
+```bash
 npx @mikr13/port-check <port>
 ```
 
@@ -36,12 +42,18 @@ bunx @mikr13/port-check <port>
 ```bash
 # Check what's running on port 3000
 npx @mikr13/port-check 3000
+// or
+npx port-inspect 80
 
 # Check what's running on port 8080
 npx @mikr13/port-check 8080
+// or
+npx port-inspect 80
 
 # Check what's running on port 80 (requires admin privileges)
 npx @mikr13/port-check 80
+// or
+npx port-inspect 80
 ```
 
 ## Examples
@@ -130,6 +142,8 @@ Some ports (especially system ports < 1024) may require administrator privileges
 
 ```bash
 sudo npx @mikr13/port-check 80
+// or
+npx port-inspect 80
 ```
 
 **Windows:**
@@ -137,6 +151,8 @@ Run Command Prompt as Administrator, then:
 
 ```bash
 npx @mikr13/port-check 80
+// or
+npx port-inspect 80
 ```
 
 ### Command Not Found Errors
@@ -224,3 +240,7 @@ MIT
 - Basic port checking functionality
 - Formatted output with emojis
 - Error handling and validation
+
+### v1.0.1
+
+- Added `alias-port-check`
