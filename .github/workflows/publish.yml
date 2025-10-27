@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Install Bun
         uses: oven-sh/setup-bun@v2
@@ -38,14 +40,6 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
           sed -i "s/\"@mikr13\/port-check\": \"[^\"]*\"/\"@mikr13\/port-check\": \"^${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
 
-      - name: Commit version changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add package.json alias-port-check/package.json
-          git commit -m "chore: bump version to ${{ steps.version.outputs.VERSION }}"
-          git push
-
       - name: Install dependencies
         run: bun install
 
@@ -60,3 +54,11 @@ jobs:
           bun publish -p --access public
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit version changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package.json alias-port-check/package.json
+          git commit -m "chore: bump version to ${{ steps.version.outputs.VERSION }}"
+          git push origin main
