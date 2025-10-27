@@ -1,6 +1,6 @@
 {
   "name": "port-inspect",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "Unscoped alias for @mikr13/port-check",
   "type": "module",
   "bin": {
@@ -10,7 +10,7 @@
     "bin"
   ],
   "dependencies": {
-    "@mikr13/port-check": "^1.0.3"
+    "@mikr13/port-check": "^1.0.8"
   },
   "publishConfig": {
     "access": "public"

@@ -1,6 +1,6 @@
 {
   "name": "@mikr13/port-check",
-  "version": "1.0.3",
+  "version": "1.0.8",
   "description": "A cross-platform CLI tool to check which process is running on a specific port",
   "type": "module",
   "main": "index.js",
