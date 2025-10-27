@@ -48,6 +48,11 @@ jobs:
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Install dependencies in alias-port-check
+        run: |
+          cd alias-port-check
+          bun install
+
       - name: Publish port-inspect
         run: |
           cd alias-port-check

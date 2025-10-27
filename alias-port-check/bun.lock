@@ -4,11 +4,11 @@
     "": {
       "name": "port-inspect",
       "dependencies": {
-        "@mikr13/port-check": "^1.0.3",
+        "@mikr13/port-check": "^1.0.8",
       },
     },
   },
   "packages": {
-    "@mikr13/port-check": ["@mikr13/port-check@1.0.3", "", { "bin": { "port-check": "index.js" } }, "sha512-ipSaSoWGeiKAiei3picd8f4bbEJkgCvN9A6OPzTZXft9YaqhEcDXmu3pfTjpIVa/oUfLRSqjlAy6PUuFolBgqw=="],
+    "@mikr13/port-check": ["@mikr13/port-check@1.0.8", "", { "bin": { "port-check": "index.js" } }, "sha512-HCyuGFV2lLveq3SNpN/jjUATcmnHWORBz3Pmqrd6ihvYwNccthFCJ41gNuLc+tkCg9Sm+8xWcq1drARpWrJqnQ=="],
   }
 }
