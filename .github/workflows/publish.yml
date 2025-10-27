@@ -38,6 +38,14 @@ jobs:
           sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
           sed -i "s/\"@mikr13\/port-check\": \"[^\"]*\"/\"@mikr13\/port-check\": \"^${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
 
+      - name: Commit version changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package.json alias-port-check/package.json
+          git commit -m "chore: bump version to ${{ steps.version.outputs.VERSION }}"
+          git push
+
       - name: Install dependencies
         run: bun install
 
