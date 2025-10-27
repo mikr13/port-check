@@ -10,7 +10,7 @@
     "bin"
   ],
   "dependencies": {
-    "@mikr13/port-check": "^1.0.1"
+    "@mikr13/port-check": "^1.0.3"
   },
   "publishConfig": {
     "access": "public"
