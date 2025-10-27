@@ -36,9 +36,10 @@ jobs:
 
       - name: Update package versions
         run: |
-          sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" package.json
-          sed -i "s/\"version\": \".*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
-          sed -i "s/\"@mikr13\/port-check\": \"[^\"]*\"/\"@mikr13\/port-check\": \"^${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
+          sed -i.bak "s/\"version\": \"[^\"]*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" package.json
+          sed -i.bak "s/\"version\": \"[^\"]*\"/\"version\": \"${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
+          sed -i.bak "s/\"@mikr13\/port-check\": \"[^\"]*\"/\"@mikr13\/port-check\": \"^${{ steps.version.outputs.VERSION }}\"/" alias-port-check/package.json
+          rm -f package.json.bak alias-port-check/package.json.bak
 
       - name: Install dependencies
         run: bun install
