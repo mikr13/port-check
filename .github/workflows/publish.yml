@@ -48,47 +48,6 @@ jobs:
         env:
           NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Wait for registry propagation
-        run: sleep 60
-
-      - name: Verify package availability
-        run: |
-          echo "Checking if @mikr13/port-check@${{ steps.version.outputs.VERSION }} is available..."
-          for i in {1..5}; do
-            if bun pm ls @mikr13/port-check@${{ steps.version.outputs.VERSION }} --registry https://registry.npmjs.org/ >/dev/null 2>&1; then
-              echo "Package is available!"
-              break
-            else
-              echo "Attempt $i: Package not yet available, waiting 30 seconds..."
-              if [ $i -lt 5 ]; then
-                sleep 30
-              else
-                echo "Package still not available after 5 attempts"
-                exit 1
-              fi
-            fi
-          done
-
-      - name: Install dependencies in alias-port-check
-        run: |
-          cd alias-port-check
-          for i in {1..3}; do
-            echo "Installation attempt $i..."
-            if bun install; then
-              echo "Installation successful!"
-              break
-            else
-              echo "Installation failed, attempt $i"
-              if [ $i -lt 3 ]; then
-                echo "Waiting 30 seconds before retry..."
-                sleep 30
-              else
-                echo "All installation attempts failed"
-                exit 1
-              fi
-            fi
-          done
-
       - name: Publish port-inspect
         run: |
           cd alias-port-check
