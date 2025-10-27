@@ -42,13 +42,13 @@ jobs:
         run: bun install
 
       - name: Publish @mikr13/port-check
-        run: bun publish
+        run: bun publish -p --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish port-inspect
         run: |
           cd alias-port-check
-          bun publish
+          bun publish -p --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
