@@ -60,7 +60,7 @@ npx port-inspect 80
 
 ### macOS/Linux Output
 
-```
+```sh
 🔍 Checking port 3000 on darwin...
 
 🔍 Process(es) using port 3000:
@@ -69,7 +69,7 @@ npx port-inspect 80
 
 ### Windows Output
 
-```
+```sh
 🔍 Checking port 3000 on win32...
 
 🔍 Process(es) using port 3000:
@@ -78,7 +78,7 @@ npx port-inspect 80
 
 ### No Process Found
 
-```
+```sh
 🔍 Checking port 9999 on darwin...
 
 🔍 No process found using port 9999
